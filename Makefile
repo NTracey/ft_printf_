@@ -4,10 +4,10 @@ NAME = libftprintf.a
 # List of source files for ft_printf
 SRC = ft_printf.c \
       format_specifier.c \
-      src/_char.c \
+      src/_putchar.c \
       src/_dec_int.c \
       src/_hex.c \
-      src/_string.c \
+      src/_putstr.c \
       src/_unsigned_decimal.c
 
 # OBJ generated from source file will take the .c files and converts/compiles them into .o files

@@ -1,19 +1,5 @@
 #include "../ft_printf.h"
 
-void ft_putchar(char c)
-{
-    write(1, &c, 1);
-}
-
-void ft_putstr(const char *str)
-{
-    while (*str != '\0')
-    {
-        ft_putchar(*str);
-        str++;
-    }
-}
-
 static size_t get_num_len(int n)
 {
     size_t len;
@@ -56,7 +42,7 @@ char *ft_itoa(int n)
 
 void _dec_int(int decimal_number)
 {
-    ft_putstr(ft_itoa(decimal_number));
+    _putstr(ft_itoa(decimal_number));
 }
 
 int main()

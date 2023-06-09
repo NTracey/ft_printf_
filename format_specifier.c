@@ -5,12 +5,12 @@ void handle_format_specifier(const char *format, va_list args)
     if (*format == 'c' || *format == '%')
     {
         int ch = va_arg(args, int);
-        _char((char)ch);
+        _putchar((char)ch);
     }
     else if (*format == 's')
     {
         char *str = va_arg(args, char *);
-        _string(str);
+        _putstr(str);
     }
     else if (*format == 'd' || *format == 'i')
     {

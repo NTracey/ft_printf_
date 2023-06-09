@@ -23,7 +23,7 @@ int convert_to_ascii(unsigned int decimal_number, int lowercase)
         }
     }
     while (--i >= 0) // Print the hex number in reverse order
-        putchar(hexa_num[i]);
+        _putchar(hexa_num[i]);
     return 0;
 }
 
