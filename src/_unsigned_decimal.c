@@ -58,15 +58,14 @@ char *ft_itoa(unsigned int n)
     // 	str[0] = '-';
     return (str);
 }
-       void print_unsigned_decimal(int n);
+
+void _unsigned_decimal(int decimal_number)
+{
+    ft_putstr(ft_itoa(decimal_number));
+}
 
 int main()
 {
-    print_unsigned_decimal(-11);
+    _unsigned_decimal(-11);
     return 0;
-}
-
-void print_unsigned_decimal(int decimal_number)
-{
-    ft_putstr(ft_itoa(decimal_number));
 }

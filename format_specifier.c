@@ -18,11 +18,11 @@ if (*format == 'd' || *format == 'i')
     int num = va_arg(args, int);
     _integer(num);
 }
-// if (*format == 'u')
-// {
-//     int num = va_arg(args, int);
-//     _integer(num);
-// }
+if (*format == 'u')
+{
+    int num = va_arg(args, int);
+    _unsigned_decimal(num);
+}
 if (*format == 'x' || *format == 'X')
 {
     unsigned int decimal_number;
