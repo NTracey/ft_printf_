@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdarg.h>
+#include "../ft_printf.h"
 
 // Function to convert a decimal number to its hexadecimal ASCII representation
 int convert_to_ascii(unsigned int decimal_number, int lowercase)
