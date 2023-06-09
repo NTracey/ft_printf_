@@ -47,7 +47,7 @@ void print_hex(const char *format, ...)
             format++;
             unsigned int decimal_number;
 
-            decimal_number = va_arg(args, int); // Use unsigned int here
+            decimal_number = va_arg(args, unsigned int); // Use unsigned int here
             if (*format == 'x')
                 convert_to_ascii(decimal_number, 1); // Lowercase hex
             if (*format == 'X')

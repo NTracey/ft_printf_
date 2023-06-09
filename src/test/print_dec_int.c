@@ -63,46 +63,43 @@ void ft_putstr(char *str)
     }
 }
 
-int print_decimal(const char *format, ...)
+int print_dec_int(const char *format, ...)
 {
     va_list args;
     va_start(args, format);
 
-    int num_count;
+    // int num_count;
 
-    num_count = 0;
+    // num_count = 0;
     while (*format != '\0')
     {
-        if (*format == '%' && *++format == 'd')
+        if (*format == '%')
         {
+            format++;
             int num = va_arg(args, int);
-
-            /*
-            char *str;
-            str = ft_itoa(num); // must be freed later
-            ft_putstr(str);
-            free(str); // Remember to free the dynamically allocated memory
-            */
-
-            ft_putstr(ft_itoa(num));
-            num_count = num_count + get_num_len(num) + 1; // Update the total count separately
+            if (*format == 'd' || *format == 'i')
+                ft_putstr(ft_itoa(num));
         }
         else
         {
             ft_putchar(*format);
-            num_count++;
+            // num_count++;
         }
         format++;
     }
     va_end(args);
-    return (num_count);
+    // return (num_count);
 }
 
 int main()
 {
     int octal_num = 052; // Octal representation of decimal 42
     int hex_num = 0x2A;  // Hexadecimal representation of decimal 42
-    printf("%d, %d, %d, %d, %d\n", 42, -11, 0, octal_num, hex_num);
-    print_decimal("%d, %d, %d, %d, %d\n", 42, -11, 0, octal_num, hex_num);
+    printf("DECIMAL\nprintf: %d, %d, %d, %d, %d, %d, %d\n", 42, -11, 0, 222, -222, octal_num, hex_num);
+    print_dec_int("print_dec_int: %d, %d, %d, %d, %d %d, %d\n\n", 42, -11, 0, 222, -222, octal_num, hex_num);
+
+    printf("INTEGER\nprintf: %i, %i, %i, %i, %i, %i\n", 0, 1000, 222, -222, octal_num, hex_num);
+    print_dec_int("print_dec_int:%i, %i, %i, %i,  %i, %i\n", 0, 1000, 222, -222, octal_num, hex_num);
+    
     return 0;
 }

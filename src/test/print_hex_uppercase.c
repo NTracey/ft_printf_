@@ -9,7 +9,7 @@ int convert_to_ascii(unsigned int decimal_number)
 
     if (decimal_number == 0)
         hexa_num[i++] = '0';
-    else     // handles positive decimal numbers
+    else // handles positive decimal numbers
     {
         while (decimal_number != 0)
         {
@@ -21,7 +21,7 @@ int convert_to_ascii(unsigned int decimal_number)
             decimal_number = decimal_number / 16;
         }
     }
-    while (i-- > 0)     // Print the hex number in reverse order
+    while (i-- > 0) // Print the hex number in reverse order
         putchar(hexa_num[i]);
     return (0);
 }

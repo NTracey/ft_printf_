@@ -11,7 +11,6 @@ void ft_putchar(char c)
     write(1, &c, 1);
 }
 
-
 // change parameter from int to unsigned int to only handle positive numbers
 static size_t get_num_len(unsigned int n)
 {
@@ -29,29 +28,29 @@ static size_t get_num_len(unsigned int n)
 }
 
 // change parameter from int to unsigned int
-char	*ft_itoa(unsigned int n)
+char *ft_itoa(unsigned int n)
 {
-	char			*str;
-	size_t			len;
-	// unsigned int	nbr;
+    char *str;
+    size_t len;
+    // unsigned int	nbr;
 
-	len = get_num_len(n);
-	str = (char *)malloc((len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	str[len] = '\0';
-	// if (n < 0)
-	// 	nbr = -n;
-	// else
-	// 	nbr = n;
-	while (len--)
-	{
-		str[len] = (n % 10) + '0';
-		n /= 10;
-	}
-	// if (n < 0)
-	// 	str[0] = '-';
-	return (str);
+    len = get_num_len(n);
+    str = (char *)malloc((len + 1) * sizeof(char));
+    if (!str)
+        return (NULL);
+    str[len] = '\0';
+    // if (n < 0)
+    // 	nbr = -n;
+    // else
+    // 	nbr = n;
+    while (len--)
+    {
+        str[len] = (n % 10) + '0';
+        n /= 10;
+    }
+    // if (n < 0)
+    // 	str[0] = '-';
+    return (str);
 }
 
 void ft_putstr(char *str)
@@ -65,8 +64,6 @@ void ft_putstr(char *str)
         i++;
     }
 }
-
-
 
 int print_unsigned_decimal(const char *format, ...)
 {
@@ -107,9 +104,9 @@ int print_unsigned_decimal(const char *format, ...)
     return num_count;
 }
 
-
-int main() {
-    int octal_num = 052;  // Octal representation of decimal 42
+int main()
+{
+    int octal_num = 052; // Octal representation of decimal 42
     int hex_num = 0x2A;  // Hexadecimal representation of decimal 42
     printf("%u, %u, %u, %u, %u\n", 42, -11, 0, octal_num, hex_num);
     print_unsigned_decimal("%u, %u, %u, %u, %u\n\n", 42, -11, 0, octal_num, hex_num);
