@@ -8,7 +8,7 @@ void ft_putstr(char *str)
 {
     int i = 0;
     if (str == NULL)
-        ft_putstr("(null)");
+    ft_putstr("(null)");
     else
     {
         while (str[i] != '\0')
@@ -70,13 +70,18 @@ void print_pointer(const char *format, ...)
                 // unsigned long int decimal_number = (unsigned long int)ptr;
                 if (ptr == NULL)
                 {
-                    printf("(nil)");
-                    // return 
-                    // return;
+                    // using printf won't change the position of (nil)
+                    // but using write(1, "(nil), 5") and ft_putstr("(nil)") will mess up the output position of (nil)
+                    putchar('(');
+                    putchar('n');
+                    putchar('i');
+                    putchar('l');
+                    putchar(')');
                 }
                 else
                 {
                     unsigned long int decimal_number = (unsigned long int)ptr;
+                    // ft_putstr("0x") will move the position of the output of convert_to_ascii(decimal_number, 1);
                     putchar('0');
                     putchar('x');
                     convert_to_ascii(decimal_number, 1);
