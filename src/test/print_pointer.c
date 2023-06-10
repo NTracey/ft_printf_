@@ -2,9 +2,24 @@
 
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
+
+void ft_putstr(char *str)
+{
+    int i = 0;
+    if (str == NULL)
+        ft_putstr("(null)");
+    else
+    {
+        while (str[i] != '\0')
+        {
+            write(1, &str[i], 1);
+            i++;
+        }
+    }
+}
 
 // paramters are change to long to handle the long number to print out otherwise it'll just get cut off midway
-
 int convert_to_ascii(unsigned long int decimal_number, int lowercase)
 {
     int i;
@@ -52,10 +67,20 @@ void print_pointer(const char *format, ...)
                 // unsigned long int decimal_number;
                 // decimal_number = va_arg(args, unsigned long int);
                 void *ptr = va_arg(args, void *);
-                unsigned long int decimal_number = (unsigned long int)ptr;
-                putchar('0');
-                putchar('x');
-                convert_to_ascii(decimal_number, 1);
+                // unsigned long int decimal_number = (unsigned long int)ptr;
+                if (ptr == NULL)
+                {
+                    printf("(nil)");
+                    // return 
+                    // return;
+                }
+                else
+                {
+                    unsigned long int decimal_number = (unsigned long int)ptr;
+                    putchar('0');
+                    putchar('x');
+                    convert_to_ascii(decimal_number, 1);
+                }
             }
         }
         else
@@ -65,7 +90,6 @@ void print_pointer(const char *format, ...)
     va_end(args);
 }
 
-
 #include <stdio.h>
 
 int main()
@@ -73,9 +97,12 @@ int main()
     int a = 10;
     int *b = &a;
 
-    print_pointer("%p\n", b);        // Output: 7fffed03bdbc
-    printf("%p\n", (void *)b); // Output: 7fffed03bdbc
-    printf("%lx\n", (unsigned long)b);  // Output: 7fffed03bdbc
+    print_pointer("%p\n", b);          // Output: 7fffed03bdbc
+    printf("%p\n", (void *)b);         // Output: 7fffed03bdbc
+    printf("%lx\n", (unsigned long)b); // Output: 7fffed03bdbc
+
+    printf("printf: %p, %p\n", (void *)0x1234, NULL);
+    print_pointer("ft_printf: %p, %p\n", (void *)0x1234, NULL);
 
     return 0;
 }
