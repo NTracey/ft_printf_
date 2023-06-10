@@ -1,5 +1,5 @@
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -14,10 +14,10 @@ typedef struct s_list
 } t_list;
 
 void handle_format_specifier(const char *format, va_list args);
-void _putchar(char c);
-void _putstr(char *str);
-void _dec_int(int decimal_number);
-void _hex(unsigned int decimal_number, int lowercase);
-void _unsigned_decimal(int decimal_number);
+void ft_putchar(char c);
+void ft_putstr(char *str);
+void ft_dec_int(int decimal_number);
+void ft_hex(unsigned int decimal_number, int lowercase);
+void ft_unsigned_decimal(int decimal_number);
 
 #endif

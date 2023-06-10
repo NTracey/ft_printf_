@@ -1,4 +1,4 @@
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 static size_t get_num_len(int n)
 {
@@ -40,13 +40,13 @@ char *ft_itoa(int n)
     return (str);
 }
 
-void _dec_int(int decimal_number)
+void ft_dec_int(int decimal_number)
 {
-    _putstr(ft_itoa(decimal_number));
+    ft_putstr(ft_itoa(decimal_number));
 }
 
 int main()
 {
-    _dec_int(-11);
+    ft_dec_int(-11);
     return 0;
 }

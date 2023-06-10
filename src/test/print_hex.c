@@ -2,6 +2,8 @@
 #include <stdarg.h>
 
 // Function to convert a decimal number to its hexadecimal ASCII representation
+
+// unsigned to deal with negatives
 int convert_to_ascii(unsigned int decimal_number, int lowercase)
 {
     int i;

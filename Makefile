@@ -4,11 +4,12 @@ NAME = libftprintf.a
 # List of source files for ft_printf
 SRC = ft_printf.c \
       format_specifier.c \
-      src/_putchar.c \
-      src/_dec_int.c \
-      src/_hex.c \
-      src/_putstr.c \
-      src/_unsigned_decimal.c
+      ft_putchar.c \
+      ft_putstr.c \
+      ft_dec_int.c \
+      ft_unsigned_decimal.c \
+      ft_hex.c \
+      ft_pointer.c \
 
 # OBJ generated from source file will take the .c files and converts/compiles them into .o files
 OBJ = $(SRC:.c=.o)
@@ -46,3 +47,6 @@ fclean: clean
 
 # re will do fclean and remake your binary
 re: fclean all
+
+# .phony helps to avoid relinking
+.PHONY: all clean fclean re
