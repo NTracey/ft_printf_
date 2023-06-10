@@ -2,17 +2,15 @@
 
 void handle_format_specifier(const char *format, va_list args)
 {
-
-    /*
-        void *ptr = va_arg(args, void *);
-        if (ptr == NULL)
-            ft_putstr('nill);
-
-    */
-    if (*format == 'c' || *format == '%')
+    if (*format == 'c')
     {
         int ch = va_arg(args, int);
         ft_putchar((char)ch);
+    }
+    else if (*format == '%')
+    {
+        int ch = va_arg(args, int);
+        ft_percent((char)ch);
     }
     else if (*format == 's')
     {
@@ -31,14 +29,12 @@ void handle_format_specifier(const char *format, va_list args)
     }
     else if (*format == 'x' || *format == 'X')
     {
-        unsigned int num = va_arg(args, unsigned long int);
-        // fix this code
+        unsigned int num = va_arg(args, unsigned int);
         ft_hex(num, *format == 'x');
     }
     else if (*format == 'p')
     {
-        unsigned int num = va_arg(args, unsigned long int);
-        // fix this line
+        void* num = va_arg(args, void*);
         ft_pointer(num);
     }
 }

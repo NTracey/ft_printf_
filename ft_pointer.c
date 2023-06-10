@@ -26,7 +26,7 @@ int convert_to_ascii(unsigned long int decimal_number, int lowercase)
         }
     }
     while (--i >= 0) // Print the hex number in reverse order
-        putchar(hexa_num[i]);
+        ft_putchar(hexa_num[i]);
     return 0;
 }
 
@@ -53,6 +53,7 @@ void ft_putstr(char *str)
         }
     }
 }
+
 void ft_pointer(const void *ptr)
 {
     if (ptr == NULL)
