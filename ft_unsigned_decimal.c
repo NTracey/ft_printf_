@@ -3,7 +3,7 @@
 // rename getnum and itoa since they changed
 
 // change parameter from int to unsigned int to only handle positive numbers
-static size_t get_num_len(unsigned int n)
+static size_t num_len(unsigned int n)
 {
     size_t len = 0;
     // changes to only handle if format string in 0
@@ -19,13 +19,13 @@ static size_t get_num_len(unsigned int n)
 }
 
 // change parameter from int to unsigned int
-char *ft_itoa(unsigned int n)
+char *_itoa(unsigned int n)
 {
     char *str;
     size_t len;
     // unsigned int	nbr;
 
-    len = get_num_len(n);
+    len = num_len(n);
     str = (char *)malloc((len + 1) * sizeof(char));
     if (!str)
         return (NULL);
@@ -46,7 +46,7 @@ char *ft_itoa(unsigned int n)
 
 void ft_unsigned_decimal(int decimal_number)
 {
-    ft_putstr(ft_itoa(decimal_number));
+    ft_putstr(_itoa(decimal_number));
 }
 
 int main()
