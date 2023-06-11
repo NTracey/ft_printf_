@@ -19,5 +19,6 @@ void ft_putstr(char *str);
 void ft_dec_int(int decimal_number);
 void ft_hex(unsigned int decimal_number, int lowercase);
 void ft_unsigned_decimal(int decimal_number);
+void ft_pointer(const void *ptr)
 
 #endif
