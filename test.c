@@ -8,9 +8,9 @@ void ft_putchar(char c)
     write(1, &c, 1);
 }
 
-void ft_percent(char c)
+void ft_percent(void)
 {
-    write(1, "%", 1);
+    ft_putchar('%');
 }
 
 void ft_putstr(char *str)
@@ -167,7 +167,8 @@ void handle_format_specifier(const char *format, va_list args)
     if (*format == 'c')
         ft_putchar((char)va_arg(args, int));
     else if (*format == '%')
-        ft_percent((char)va_arg(args, int));
+        // parameter is nothing because it does not expect any argument since it's void. It will simple print %
+        ft_percent();
     else if (*format == 's')
         ft_putstr(va_arg(args, char *));
     else if (*format == 'd' || *format == 'i')

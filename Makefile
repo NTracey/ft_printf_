@@ -5,6 +5,7 @@ NAME = libftprintf.a
 SRC = ft_printf.c \
       format_specifier.c \
       ft_putchar.c \
+      ft_percent.c \
       ft_putstr.c \
       ft_dec_int.c \
       ft_unsigned_decimal.c \

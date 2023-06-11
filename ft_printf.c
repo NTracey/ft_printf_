@@ -38,7 +38,7 @@ int ft_printf(const char *format, ...)
         if (*format == '%')
         {
             format++;                              // Move past the '%'
-            handle_format_specifier(format, args); // Call the function in format_specifier.c
+            format_specifier(format, args); // Call the function in format_specifier.c
             // format++;                              // Move past the format specifier character
         }
         else
