@@ -6,12 +6,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-typedef struct s_list
-{
-    void *content;
-    size_t content_size;
-    struct s_list *next;
-} t_list;
+// typedef struct s_list
+// {
+//     void *content;
+//     size_t content_size;
+//     struct s_list *next;
+// } t_list;
 
 void format_specifier(const char *format, va_list args);
 void ft_putchar(char c);

@@ -49,5 +49,5 @@ fclean: clean
 # re will do fclean and remake your binary
 re: fclean all
 
-# .phony helps to avoid relinking
-.PHONY: all clean fclean re
+# # .phony helps to avoid relinking
+# .PHONY: all clean fclean re
