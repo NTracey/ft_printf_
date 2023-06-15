@@ -4,31 +4,31 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int convert_to_ascii(unsigned long int decimal_number, int lowercase)
-{
-    int i;
-    int remainder;
-    char hexa_num[100];
+// int convert_to_ascii(unsigned long int decimal_number, int lowercase)
+// {
+//     int i;
+//     int remainder;
+//     char hexa_num[100];
 
-    i = 0;
-    if (decimal_number == 0)
-        hexa_num[i++] = '0';
-    else // handles positive decimal numbers
-    {
-        while (decimal_number != 0)
-        {
-            remainder = decimal_number % 16;
-            if (remainder < 10)
-                hexa_num[i++] = remainder + '0'; // Convert to ASCII character
-            else
-                hexa_num[i++] = remainder + (lowercase ? 'a' : 'A') - 10;
-            decimal_number = decimal_number / 16;
-        }
-    }
-    while (--i >= 0) // Print the hex number in reverse order
-        ft_putchar(hexa_num[i]);
-    return 0;
-}
+//     i = 0;
+//     if (decimal_number == 0)
+//         hexa_num[i++] = '0';
+//     else // handles positive decimal numbers
+//     {
+//         while (decimal_number != 0)
+//         {
+//             remainder = decimal_number % 16;
+//             if (remainder < 10)
+//                 hexa_num[i++] = remainder + '0'; // Convert to ASCII character
+//             else
+//                 hexa_num[i++] = remainder + (lowercase ? 'a' : 'A') - 10;
+//             decimal_number = decimal_number / 16;
+//         }
+//     }
+//     while (--i >= 0) // Print the hex number in reverse order
+//         ft_putchar(hexa_num[i]);
+//     return 0;
+// }
 
 // const void * since a pointer can be any data type and cannot be modified
 // void ft_pointer(const void *ptr)
@@ -54,6 +54,32 @@ void ft_putstr(char *str)
     }
 }
 
+void ft_hex(unsigned long int decimal_number, int lowercase)
+{
+    // convert_to_ascii(decimal_number, lowercase);
+    int i;
+    int remainder;
+    char hexa_num[100];
+
+    i = 0;
+    if (decimal_number == 0)
+        hexa_num[i++] = '0';
+    else // handles positive decimal numbers
+    {
+        while (decimal_number != 0)
+        {
+            remainder = decimal_number % 16;
+            if (remainder < 10)
+                hexa_num[i++] = remainder + '0'; // Convert to ASCII character
+            else
+                hexa_num[i++] = remainder + (lowercase ? 'a' : 'A') - 10;
+            decimal_number = decimal_number / 16;
+        }
+    }
+    while (--i >= 0) // Print the hex number in reverse order
+        putchar(hexa_num[i]);
+}
+
 void ft_pointer(const void *ptr)
 {
     if (ptr == NULL)
@@ -62,7 +88,7 @@ void ft_pointer(const void *ptr)
     {
         unsigned long int decimal_number = (unsigned long int)ptr;
         ft_putstr("0x");
-        convert_to_ascii(decimal_number, 1);
+        ft_hex(decimal_number, 1);
     }
 }
 
