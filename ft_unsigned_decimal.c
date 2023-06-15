@@ -49,8 +49,8 @@ void ft_unsigned_decimal(int decimal_number)
     ft_putstr(_itoa(decimal_number));
 }
 
-int main()
-{
-    ft_unsigned_decimal(-11);
-    return 0;
-}
+// int main()
+// {
+//     ft_unsigned_decimal(-11);
+//     return 0;
+// }

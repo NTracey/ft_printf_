@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-#include <unistd.h>
+// #include <unistd.h>
 // long is needed for %p since the number is too big to print out
 
 // Function to convert a decimal number to its hexadecimal ASCII representation
@@ -52,17 +52,16 @@ void ft_hex(unsigned long int decimal_number, int lowercase)
         }
     }
     while (--i >= 0) // Print the hex number in reverse order
-        putchar(hexa_num[i]);
+        ft_putchar(hexa_num[i]);
 }
 
+// int main()
+// {
+//     printf("%x\n", -222);
+//     ft_hex(-222, 0); // 0 -> Uppercase hexadecimal
+//     printf("\n");
+//     ft_hex(-222, 1); // 1 -> Lowercase hexadecimal
+//     printf("\n");
 
-int main()
-{
-    printf("%x\n", -222);
-    ft_hex(-222, 0); // 0 -> Uppercase hexadecimal
-    printf("\n");
-    ft_hex(-222, 1); // 1 -> Lowercase hexadecimal
-    printf("\n");
-
-    return 0;
-}
+//     return 0;
+// }

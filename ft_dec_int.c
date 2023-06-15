@@ -45,8 +45,8 @@ void ft_dec_int(int decimal_number)
     ft_putstr(ft_itoa(decimal_number));
 }
 
-int main()
-{
-    ft_dec_int(-11);
-    return 0;
-}
+// int main()
+// {
+//     ft_dec_int(-11);
+//     return 0;
+// }

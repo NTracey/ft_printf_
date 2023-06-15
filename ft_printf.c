@@ -83,7 +83,7 @@ int ft_printf(const char *format, ...)
 int main()
 {
     printf("\nCHAR\n");
-    int c = printf("printf: %c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
+    int c = printf("printf:    %c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
     printf("\nReturn value: %d\n", c);
 
     int ch = ft_printf("ft_printf: %c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
@@ -91,47 +91,47 @@ int main()
 
     printf("\nPERCENT\n");
 
-    printf("printf: %%%%\n");
+    printf("printf:    %%%%\n");
     ft_printf("ft_printf: %%%%\n");
 
     printf("\nSTRING\n");
 
-    printf("printf: %s, %s, %s, %s, %s\n", "Apple", "9", "", "-", "\0");
+    printf("printf:    %s, %s, %s, %s, %s\n", "Apple", "9", "", "-", "\0");
     ft_printf("ft_printf: %s, %s, %s, %s, %s\n", "Apple", "9", "", "-", "\0");
 
     printf("\nDECIMAL\n");
 
     int octal_num = 052; // Octal representation of decimal 42
     int hex_num = 0x2A;  // Hexadecimal representation of decimal 42
-    printf("printf: %d, %d, %d, %d, %d, %d, %d, %d\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("ft_printf: : %d, %d, %d, %d, %d %d, %d, %d\n\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    printf("printf:    %d, %d, %d, %d, %d, %d, %d, %d\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    ft_printf("ft_printf: %d, %d, %d, %d, %d, %d, %d, %d\n\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
 
     printf("\nINTERGER\n");
-    printf("printf: %i, %i, %i, %i, %i, %i, %i, %i\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("ft_printf: :%i, %i, %i, %i, %i, %i, %i, %i\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    printf("printf:    %i, %i, %i, %i, %i, %i, %i, %i\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    ft_printf("ft_printf: %i, %i, %i, %i, %i, %i, %i, %i\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
 
     printf("\nUNSIGNED DECIMAL\n");
 
-    printf("printf: %u, %u, %u, %u, %u, %u, %u, %u\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    printf("printf:    %u, %u, %u, %u, %u, %u, %u, %u\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
     ft_printf("ft_printf: %u, %u, %u, %u, %u, %u, %u, %u\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
 
     printf("\nHEX UPPERCASE\n");
 
-    printf("printf: %X, %X, %X, %X, %X, %X, %X, %X\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    printf("printf:    %X, %X, %X, %X, %X, %X, %X, %X\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
     ft_printf("ft_printf: %X, %X, %X, %X, %X, %X, %X, %X\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
 
     printf("\nHEX LOWERCASE\n");
 
-    printf("printf: %x, %x, %x, %x, %x, %x, %x, %x\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+    printf("printf:    %x, %x, %x, %x, %x, %x, %x, %x\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
     ft_printf("ft_printf: %x, %x, %x, %x, %x, %x, %x, %x\n", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
 
     printf("\nPOINTER\n");
     int x = 50;
     int *ptr = &x;
-    printf("printf: The address is: %p, the value is %d\n", ptr, *ptr);
+    printf("printf:    The address is: %p, the value is %d\n", ptr, *ptr);
     ft_printf("ft_printf: The address is: %p, the value is %d\n", ptr, *ptr);
 
-    printf("printf: %p, %p\n", (void *)0x1234, NULL);
+    printf("printf:    %p, %p\n", (void *)0x1234, NULL);
     ft_printf("ft_printf: %p, %p\n", (void *)0x1234, NULL);
 
     return 0;
