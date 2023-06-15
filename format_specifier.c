@@ -1,6 +1,9 @@
 #include "ft_printf.h"
 void format_specifier(const char *format, va_list args)
 {
+    // If the format specifier is 'c', 
+    // it retrieves the next argument as an int using va_arg 
+    // and passes it to the ft_putchar function, which prints a character.
     if (*format == 'c')
         ft_putchar((char)va_arg(args, int));
     else if (*format == '%')

@@ -28,29 +28,33 @@
 
 int ft_printf(const char *format, ...)
 {
-    va_list args;
-    va_start(args, format);
+    va_list args;           // Declare a variable of type va_list to hold the variable arguments
+    va_start(args, format); // Initialize the va_list with the variable arguments
 
-    int char_count = 0;
+    int char_count = 0; // Initialize a counter for the number of characters printed
 
-    while (*format != '\0')
+    while (*format != '\0') // Iterate over each character in the format string
     {
-        if (*format == '%')
+        if (*format == '%') // If the current character is '%', it indicates a format specifier
         {
-            format++;                              // Move past the '%'
-            format_specifier(format, args); // Call the function in format_specifier.c
-            // format++;                              // Move past the format specifier character
+            format++; // Move past the '%' character
+
+            // Call the function format_specifier to handle the format specifier
+            format_specifier(format, args);
+
+            // Note: In the original code, there was an extra format++ here, which is unnecessary and has been commented out
         }
         else
-            // {
-            ft_putchar(*format); // Print the non-format character
-        format++;                // Move to the next character in the format string
-        // }
-        char_count++;
+        {
+            ft_putchar(*format); // Print the non-format character using ft_putchar
+        }
+
+        format++;     // Move to the next character in the format string
+        char_count++; // Increment the character count
     }
 
-    va_end(args);
-    return char_count;
+    va_end(args);      // Clean up the va_list after using it
+    return char_count; // Return the total number of characters printed
 }
 
 // int ft_printf(const char *format, ...)
