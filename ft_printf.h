@@ -1,10 +1,10 @@
 // HEADER GUARDS: #ifndef FT_PRINTF_H and #define FT_PRINTF_H
 // They ensure that the contents of the header file are included only once during the compilation process.
 
-// #ifndef is responsible for including the code in the header file when the symbol is not defined.
-// The code between #ifndef and the corresponding #endif will be included in the compilation.
+// 1. #include "ft_printf.h" will include this header file
+// 2. #ifndef will evaluate to true due to header being added the first time and it will include the codes betwwen ifndef and endif
 #ifndef FT_PRINTF_H
-// #define is used to define the symbol to prevent duplicate inclusion in subsequent files.
+// 3. #define will be encountered after the code block and it will prevent duplicate inclusion in the file by skipping over ifndef and endif
 # define FT_PRINTF_H
 
 // Header file inclusions

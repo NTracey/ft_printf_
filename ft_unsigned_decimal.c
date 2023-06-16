@@ -6,7 +6,7 @@
 static size_t num_len(unsigned int n)
 {
     size_t len = 0;
-    // changes to only handle if format string in 0
+    // changes to only handle if format string in 0 and not -ve numbers
     if (n == 0)
         // return 1 length
         return 1;
@@ -30,6 +30,7 @@ char *_itoa(unsigned int n)
     if (!str)
         return (NULL);
     str[len] = '\0';
+    //removed this codes since this part was included to handle -ve integers
     // if (n < 0)
     // 	nbr = -n;
     // else
@@ -39,6 +40,7 @@ char *_itoa(unsigned int n)
         str[len] = (n % 10) + '0';
         n /= 10;
     }
+    // removed this codes since this part was included to handle -ve integers
     // if (n < 0)
     // 	str[0] = '-';
     return (str);
