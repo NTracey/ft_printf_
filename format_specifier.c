@@ -139,11 +139,7 @@ int format_specifier(const char *format, va_list args)
         unsigned int num = va_arg(args, unsigned int);
         char_count += ft_hex(num, *format == 'x');
     }
-    // else if (*format == 'p')
-    // {
-    //     void *num = va_arg(args, void *);
-    //     char_count += ft_pointer(num);
-    // }
+
 
     return char_count;
 }

@@ -180,24 +180,25 @@ int main()
     int hexlo = ft_printf("%x, %x, %x, %x, %x, %x, %x, %x", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
     ft_printf("\nReturn value: %d\n", hexlo);
 
-    // printf("---------------------------------------------------------------------------------------------------------------------");
+    printf("---------------------------------------------------------------------------------------------------------------------");
 
-    // printf("\nPOINTER\n");
-    // int x = 50;
-    // int *ptr = &x;
-    // printf("printf:\n");
-    // printf("The address is: %p, the value is %d", ptr, *ptr);
+    printf("\nPOINTER\n");
+    int x = 50;
+    int *ptr = &x;
+    printf("printf:\n");
+    printf("The address is: %p, the value is %d", ptr, *ptr);
 
-    // printf("\nft_printf:\n");
-    // ft_printf("The address is: %p, the value is %d", ptr, *ptr);
+    printf("\nft_printf:\n");
+    ft_printf("The address is: %p, the value is %d", ptr, *ptr);
 
-    // printf("\nprintf:\n");
-    // int point = printf("%p, %p", (void *)0x1234, NULL);
-    // printf("\nReturn value: %d\n", point);
+    printf("\nprintf:\n");
+    int point = printf("%p, %p", (void *)0x1234, NULL);
+    printf("\nReturn value: %d\n", point);
 
-    // printf("\nft_printf:\n");
-    // int pointer = ft_printf("%p, %p", (void *)0x1234, NULL);
-    // ft_printf("\nReturn value: %d\n", pointer);
+    printf("\nft_printf:\n");
+    int pointer = ft_printf("%p, %p", (void *)0x1234, NULL);
+    ft_printf("\nReturn value: %d\n", pointer);
+
 
     return 0;
 }
