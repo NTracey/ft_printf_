@@ -1,23 +1,5 @@
 #include "ft_printf.h"
-#include <string.h>
 // long is needed for %p since the number is too big to print out
-
-#include <stdlib.h>
-
-// remake this helper function
-int ft_hex_length(unsigned long nbr)
-{
-    int length;
-
-    length = 0;
-    while (nbr > 0)
-    {
-        nbr /= 16;
-        length++;
-    }
-    return (length);
-}
-
 int ft_hex(unsigned long int decimal_number, int lowercase)
 {
     int i;
@@ -25,7 +7,7 @@ int ft_hex(unsigned long int decimal_number, int lowercase)
     char *hexa_num;
     int char_count = 0;
 
-    hexa_num = (char *)malloc((ft_hex_length(decimal_number) + 1) * sizeof(char));
+    hexa_num = (char *)malloc((hex_length(decimal_number) + 1) * sizeof(char));
 
     i = 0;
     if (decimal_number == 0)

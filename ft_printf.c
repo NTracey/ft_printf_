@@ -1,6 +1,4 @@
 #include "ft_printf.h"
-#include<string.h>
-
 
 int ft_printf(const char *format, ...)
 {

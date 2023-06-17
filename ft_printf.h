@@ -22,6 +22,7 @@ int ft_dec_int(int decimal_number);
 int ft_hex(unsigned long int decimal_number, int lowercase);
 int ft_unsigned_decimal(int decimal_number);
 int ft_pointer(const void *ptr);
+int hex_length(unsigned long nbr);
 
 // endif indicates the completion of the code that will be included only once during compilation if the header guards' condition is true.
 #endif

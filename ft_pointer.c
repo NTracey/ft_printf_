@@ -1,5 +1,4 @@
 #include "ft_printf.h"
-#include <string.h>
 
 int ft_pointer(const void *ptr)
 {
@@ -12,10 +11,24 @@ int ft_pointer(const void *ptr)
         ft_putstr("0x");
         ft_hex(decimal_number, 1);
     }
-    char *hex_string = ft_hex(decimal_number, 1);
-    int char_count = strlen(hex_string) + 2;
+    int char_count = hex_length(decimal_number) + 2;
     return char_count;
 }
+
+// int ft_pointer(const void *ptr)
+// {
+//     unsigned long int decimal_number;
+//     if (ptr == NULL)
+//         ft_putstr("(nil)");
+//     else
+//     {
+//         decimal_number = (unsigned long int)ptr;
+//         ft_putstr("0x");
+//         ft_hex(decimal_number, 1);
+//     }
+//     int char_count = hex_length(decimal_number) + 2; // Call hex_length function with the argument
+//     return char_count;
+// }
 
 // #include "ft_printf.h"
 // #include <string.h>
