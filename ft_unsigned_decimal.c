@@ -6,7 +6,7 @@
 static size_t num_len(unsigned int n)
 {
     size_t len = 0;
-    // changes to only handle if format string in 0 and not -ve numbers
+    // changes to only handle if format string in 0 and not -ve
     if (n == 0)
         // return 1 length
         return 1;
@@ -46,9 +46,11 @@ char *_itoa(unsigned int n)
     return (str);
 }
 
-void ft_unsigned_decimal(int decimal_number)
+int ft_unsigned_decimal(int decimal_number)
 {
     ft_putstr(_itoa(decimal_number));
+    int char_count = num_len(decimal_number);
+    return (char_count);
 }
 
 // int main()

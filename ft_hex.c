@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 // long is needed for %p since the number is too big to print out
 
-void ft_hex(unsigned long int decimal_number, int lowercase)
+int ft_hex(unsigned long int decimal_number, int lowercase)
 {
     // convert_to_ascii(decimal_number, lowercase);
     int i;
@@ -25,6 +25,7 @@ void ft_hex(unsigned long int decimal_number, int lowercase)
     }
     while (--i >= 0) // Print the hex number in reverse order
         ft_putchar(hexa_num[i]);
+    return (i);
 }
 
 // int main()

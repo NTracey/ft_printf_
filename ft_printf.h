@@ -14,14 +14,14 @@
 #include <unistd.h>
 
 // Function declarations
-void format_specifier(const char *format, va_list args);
+int format_specifier(const char *format, va_list args);
 void ft_putchar(char c);
 void ft_percent(void);
-void ft_putstr(char *str);
-void ft_dec_int(int decimal_number);
-void ft_hex(unsigned long int decimal_number, int lowercase);
-void ft_unsigned_decimal(int decimal_number);
-void ft_pointer(const void *ptr);
+int ft_putstr(char *str);
+int ft_dec_int(int decimal_number);
+int ft_hex(unsigned long int decimal_number, int lowercase);
+int ft_unsigned_decimal(int decimal_number);
+// int ft_pointer(const void *ptr);
 
 // endif indicates the completion of the code that will be included only once during compilation if the header guards' condition is true.
 #endif

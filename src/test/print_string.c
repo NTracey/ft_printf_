@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <unistd.h>
 
 
 int ft_strlen(const char *str)
@@ -54,6 +55,9 @@ int print_string(const char *format, ...)
 int main()
 {
     int s = printf("%s, %s, %s, %s\n", "Apple", "9", "", "-");
+    printf("%d\n", s);
     int str = print_string("%s, %s, %s, %s\n", "Apple", "9", "", "-");
+    printf("%d\n", s);
+
     return 0;
 }

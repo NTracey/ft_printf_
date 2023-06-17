@@ -60,11 +60,13 @@ char *ft_itoa(int n)
     return (str);
 }
 
-void ft_dec_int(int decimal_number)
+int ft_dec_int(int decimal_number)
 {
     //ft_putstring: print string
     //ft_itoa: converts interger to a string (does not print it)
     ft_putstr(ft_itoa(decimal_number));
+    int char_count = get_num_len(decimal_number);
+    return (char_count);
 }
 
 // int main()

@@ -10,7 +10,7 @@ SRC = ft_printf.c \
       ft_dec_int.c \
       ft_unsigned_decimal.c \
       ft_hex.c \
-      ft_pointer.c \
+      # ft_pointer.c \
 
 # OBJ generated from source file will take the .c files and converts/compiles them into .o files
 OBJ = $(SRC:.c=.o)
