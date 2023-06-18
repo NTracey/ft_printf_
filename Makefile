@@ -3,14 +3,15 @@ NAME = libftprintf.a
 
 # List of source files for ft_printf
 SRC = ft_printf.c \
-      format_specifier.c \
-      ft_putchar.c \
-      ft_percent.c \
-      ft_putstr.c \
-      ft_dec_int.c \
-      ft_unsigned_decimal.c \
-      ft_hex.c \
-      # ft_pointer.c \
+      src/format_specifier.c \
+      src/ft_putchar.c \
+      src/ft_percent.c \
+      src/ft_putstr.c \
+      src/ft_dec_int.c \
+      src/ft_unsigned_decimal.c \
+      src/ft_hex.c \
+      src/hex_length.c \
+      src/ft_pointer.c \
 
 # OBJ generated from source file will take the .c files and converts/compiles them into .o files
 OBJ = $(SRC:.c=.o)
@@ -50,4 +51,4 @@ fclean: clean
 re: fclean all
 
 # # .phony helps to avoid relinking
-# .PHONY: all clean fclean re
+.PHONY: all clean fclean re

@@ -1,6 +1,4 @@
 #include "ft_printf.h"
-#include<string.h>
-
 
 int ft_printf(const char *format, ...)
 {
@@ -89,116 +87,124 @@ int ft_printf(const char *format, ...)
 //     return char_count;
 // }
 
-int main()
-{
-    printf("\nCHAR\n");
-    printf("printf:\n");
-    int c = printf("%c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
+// int main()
+// {
+//     printf("\nCHAR\n");
+//     printf("printf:\n");
+//     int c = printf("%c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
 
-    printf("\nReturn value: %d\n", c);
-    printf("\nft_printf:\n");
-    int ch = ft_printf("%c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
-    ft_printf("\nReturn value: %d\n", ch);
+//     printf("\nReturn value: %d\n", c);
+//     printf("\nft_printf:\n");
+//     int ch = ft_printf("%c, %c, %c, %c, %c", 'A', '9', '-', 48, '\0');
+//     ft_printf("\nReturn value: %d\n", ch);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nPERCENT\n");
-    printf("printf:\n");
-    int p = printf("%%%%");
-    printf("\nReturn value: %d\n", p);
+//     printf("\nPERCENT\n");
+//     printf("printf:\n");
+//     int p = printf("%%%%");
+//     printf("\nReturn value: %d\n", p);
 
-    printf("\nft_printf:\n");
-    int per = ft_printf("%%%%");
-    printf("\nReturn value: %d\n", per);
+//     printf("\nft_printf:\n");
+//     int per = ft_printf("%%%%");
+//     printf("\nReturn value: %d\n", per);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nSTRING\n");
-    printf("printf:\n");
-    int s = printf("%s, %s, %s, %s, %s", "Apple", "9", "", "-", "\0");
-    printf("\nReturn value: %d\n", s);
+//     printf("\nSTRING\n");
+//     printf("printf:\n");
+//     int s = printf("%s, %s, %s, %s, %s", "Apple", "9", "", "-", "\0");
+//     printf("\nReturn value: %d\n", s);
 
-    printf("\nft_printf:\n");
-    int str = ft_printf("%s, %s, %s, %s, %s", "Apple", "9", "", "-", "\0");
-    ft_printf("\nReturn value: %d\n", str);
+//     printf("\nft_printf:\n");
+//     int str = ft_printf("%s, %s, %s, %s, %s", "Apple", "9", "", "-", "\0");
+//     ft_printf("\nReturn value: %d\n", str);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nDECIMAL\n");
+//     printf("\nDECIMAL\n");
 
-    int octal_num = 052; // Octal representation of decimal 42
-    int hex_num = 0x2A;  // Hexadecimal representation of decimal 42
-    printf("printf:\n");
-    int d = printf("%d, %d, %d, %d, %d, %d, %d, %d", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    printf("\nReturn value: %d\n", d);
+//     int octal_num = 052; // Octal representation of decimal 42
+//     int hex_num = 0x2A;  // Hexadecimal representation of decimal 42
+//     printf("printf:\n");
+//     int d = printf("%d, %d, %d, %d, %d, %d, %d, %d", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     printf("\nReturn value: %d\n", d);
 
-    printf("\nft_printf:\n");
-    int dec = ft_printf("%d, %d, %d, %d, %d, %d, %d, %d", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("\nReturn value: %d\n", dec);
+//     printf("\nft_printf:\n");
+//     int dec = ft_printf("%d, %d, %d, %d, %d, %d, %d, %d", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     ft_printf("\nReturn value: %d\n", dec);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nINTERGER\n");
-    printf("printf:\n");
-    int i = printf("%i, %i, %i, %i, %i, %i, %i, %i", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    printf("\nReturn value: %d\n", i);
+//     printf("\nINTERGER\n");
+//     printf("printf:\n");
+//     int i = printf("%i, %i, %i, %i, %i, %i, %i, %i", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     printf("\nReturn value: %d\n", i);
 
-    printf("\nft_printf:\n");
-    int in = ft_printf("%i, %i, %i, %i, %i, %i, %i, %i", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("\nReturn value: %d\n", in);
+//     printf("\nft_printf:\n");
+//     int in = ft_printf("%i, %i, %i, %i, %i, %i, %i, %i", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     ft_printf("\nReturn value: %d\n", in);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nUNSIGNED DECIMAL\n");
-    printf("printf:\n");
-    int u = printf("%u, %u, %u, %u, %u, %u, %u, %u", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    printf("\nReturn value: %d\n", u);
+//     printf("\nUNSIGNED DECIMAL\n");
+//     printf("printf:\n");
+//     int u = printf("%u, %u, %u, %u, %u, %u, %u, %u", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     printf("\nReturn value: %d\n", u);
 
-    printf("\nft_printf:\n");
-    int un = ft_printf("%u, %u, %u, %u, %u, %u, %u, %u", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("\nReturn value: %d\n", un);
+//     printf("\nft_printf:\n");
+//     int un = ft_printf("%u, %u, %u, %u, %u, %u, %u, %u", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     ft_printf("\nReturn value: %d\n", un);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nHEX UPPERCASE\n");
-    printf("printf:\n");
-    int hexu = printf("%X, %X, %X, %X, %X, %X, %X, %X", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    printf("\nReturn value: %d\n", hexu);
+//     printf("\nHEX UPPERCASE\n");
+//     printf("printf:\n");
+//     int hexu = printf("%X, %X, %X, %X, %X, %X, %X, %X", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     printf("\nReturn value: %d\n", hexu);
 
-    printf("\nft_printf:\n");
-    int hexupp = ft_printf("%X, %X, %X, %X, %X, %X, %X, %X", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("\nReturn value: %d\n", hexupp);
+//     printf("\nft_printf:\n");
+//     int hexupp = ft_printf("%X, %X, %X, %X, %X, %X, %X, %X", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     ft_printf("\nReturn value: %d\n", hexupp);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nHEX LOWERCASE\n");
-    printf("printf:\n");
-    int hexl = printf("%x, %x, %x, %x, %x, %x, %x, %x", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    printf("\nReturn value: %d\n", hexl);
+//     printf("\nHEX LOWERCASE\n");
+//     printf("printf:\n");
+//     int hexl = printf("%x, %x, %x, %x, %x, %x, %x, %x", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     printf("\nReturn value: %d\n", hexl);
 
-    printf("\nft_printf:\n");
-    int hexlo = ft_printf("%x, %x, %x, %x, %x, %x, %x, %x", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
-    ft_printf("\nReturn value: %d\n", hexlo);
+//     printf("\nft_printf:\n");
+//     int hexlo = ft_printf("%x, %x, %x, %x, %x, %x, %x, %x", -987654321, 1000000, 222, -222, octal_num, hex_num, 0, '\0');
+//     ft_printf("\nReturn value: %d\n", hexlo);
 
-    printf("---------------------------------------------------------------------------------------------------------------------");
+//     printf("---------------------------------------------------------------------------------------------------------------------");
 
-    printf("\nPOINTER\n");
-    int x = 50;
-    int *ptr = &x;
-    printf("printf:\n");
-    printf("The address is: %p, the value is %d", ptr, *ptr);
+//     printf("\nPOINTER\n");
+//     int x = 50;
+//     int *ptr = &x;
+//     printf("printf:\n");
+//     printf("The address is: %p, the value is %d", ptr, *ptr);
 
-    printf("\nft_printf:\n");
-    ft_printf("The address is: %p, the value is %d", ptr, *ptr);
+//     printf("\nft_printf:\n");
+//     ft_printf("The address is: %p, the value is %d", ptr, *ptr);
 
-    printf("\nprintf:\n");
-    int point = printf("%p, %p", (void *)0x1234, NULL);
-    printf("\nReturn value: %d\n", point);
+//     printf("\nprintf:\n");
+//     int point = printf("%p, %p", (void *)0x1234, NULL);
+//     printf("\nReturn value: %d\n", point);
 
-    printf("\nft_printf:\n");
-    int pointer = ft_printf("%p, %p", (void *)0x1234, NULL);
-    ft_printf("\nReturn value: %d\n", pointer);
+//     printf("\nft_printf:\n");
+//     int pointer = ft_printf("%p, %p", (void *)0x1234, NULL);
+//     ft_printf("\nReturn value: %d\n", pointer);
 
+//     printf("\n\n");
+//     int returna = ft_printf("%x", 10);
+//     ft_printf("\nreturn value: %d", returna);
+//     printf("\n");
 
-    return 0;
-}
+//     int returnb = printf("%x", 10);
+//     printf("\nreturn value: %d", returnb);
+//     printf("\n");
+
+//     return 0;
+// }

@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 // rename getnum and itoa since they changed
 
@@ -48,8 +48,11 @@ char *_itoa(unsigned int n)
 
 int ft_unsigned_decimal(int decimal_number)
 {
-    ft_putstr(_itoa(decimal_number));
+    char *str;
+    str = _itoa(decimal_number);
+    ft_putstr(str);
     int char_count = num_len(decimal_number);
+    free(str);
     return (char_count);
 }
 

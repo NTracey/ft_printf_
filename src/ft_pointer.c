@@ -1,19 +1,23 @@
-#include "ft_printf.h"
-#include <string.h>
+#include "../ft_printf.h"
 
 int ft_pointer(const void *ptr)
 {
     unsigned long int decimal_number;
+    int char_count;
+
     if (ptr == NULL)
-        ft_putstr("(nil)");
+    {
+        ft_putstr("(nil)"); // Assuming ft_putstr is defined
+        char_count = 5;     // Length of "(nil)"
+    }
     else
     {
         decimal_number = (unsigned long int)ptr;
         ft_putstr("0x");
         ft_hex(decimal_number, 1);
+        char_count = hex_length(decimal_number) + 2; // 2 for "0x"
     }
-    char *hex_string = ft_hex(decimal_number, 1);
-    int char_count = strlen(hex_string) + 2;
+
     return char_count;
 }
 

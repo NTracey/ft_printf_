@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int ft_putstr(char *str)
 {
@@ -8,6 +8,7 @@ int ft_putstr(char *str)
     if (str == NULL)
     {
         ft_putstr("(null)");
+        return 6;
     }
     else
     {

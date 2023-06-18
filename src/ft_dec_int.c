@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 // returns the length of the number
 static size_t get_num_len(int n)
@@ -62,10 +62,14 @@ char *ft_itoa(int n)
 
 int ft_dec_int(int decimal_number)
 {
-    //ft_putstring: print string
-    //ft_itoa: converts interger to a string (does not print it)
-    ft_putstr(ft_itoa(decimal_number));
+    char *str;
+    str = ft_itoa(decimal_number);
+    // ft_putstring: print string
+    // ft_itoa: converts interger to a string (does not print it)
+    ft_putstr(str);
     int char_count = get_num_len(decimal_number);
+    // free ft_itoa malloc
+    free(str);
     return (char_count);
 }
 
