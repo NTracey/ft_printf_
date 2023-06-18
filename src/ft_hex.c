@@ -47,8 +47,8 @@ int ft_hex(unsigned long int decimal_number, int lowercase)
     int char_count;
 
     hexa_num = convert_to_hex(decimal_number, lowercase);
-    // -1 since it counts from 1 not 0
-    char_count = ft_strlen(hexa_num) - 1;
+    char_count = ft_strlen(hexa_num);
+
     // add this condition because strlen does have a return value for null character
     if (decimal_number == '\0')
         return 1;
