@@ -60,32 +60,6 @@ int ft_printf(const char *format, ...)
 }
 */
 
-// int ft_printf(const char *format, ...)
-// {
-//     va_list args;
-//     va_start(args, format);
-
-//     int char_count = 0;
-
-//     while (*format != '\0')
-//     {
-//         if (*format == '%')
-//         {
-//             format++;                              // Move past the '%'
-//             format_specifier(format, args); // Call the function in format_specifier.c
-//             format++;                              // Move past the format specifier character
-//         }
-//         else
-//         {
-//             ft_putchar(*format); // Print the non-format character
-//             format++;            // Move to the next character in the format string
-//         }
-//         char_count++;
-//     }
-
-//     va_end(args);
-//     return char_count;
-// }
 
 int main()
 {
