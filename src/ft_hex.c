@@ -83,39 +83,89 @@
 
 #include "../ft_printf.h"
 
-int ft_hex(unsigned long int decimal_number, int lowercase)
+// int ft_hex(unsigned long int decimal_number, int lowercase)
+// {
+//     int i;
+//     int remainder;
+//     char *hexa_num;
+//     int char_count;
+
+//     i = 0;
+//     char_count = 0;
+//     hexa_num = (char *)malloc((hex_length(decimal_number) + 1) * sizeof(char));
+//     if (decimal_number == 0)
+//         hexa_num[i++] = '0';
+//     else // handles positive decimal numbers
+//     {
+//         // while (decimal_number != 0)
+//         // {
+//         //     remainder = decimal_number % 16;
+//         //     if (remainder < 10)
+//         //         hexa_num[i++] = remainder + '0'; // Convert to ASCII character
+//         //     else
+//         //         hexa_num[i++] = remainder + (lowercase ? 'a' : 'A') - 10;
+//         //     decimal_number = decimal_number / 16;
+//         // }
+//         while (decimal_number != 0)
+//         {
+//             remainder = decimal_number % 16;
+//             hexa_num[i++] = (remainder < 10) ? remainder + '0' : remainder + (lowercase ? 'a' : 'A') - 10;
+//             decimal_number = decimal_number / 16;
+//         }
+//     }
+//     while (--i >= 0) // Print the hex number in reverse order
+//     {
+//         ft_putchar(hexa_num[i]);
+//         char_count++;
+//     }
+//     free(hexa_num);
+//     return (char_count);
+// }
+
+int ft_strlen(char *str)
+{
+    int i = 0;
+    while (str[i] != '\0')
+        i++;
+    return i;
+}
+
+char *convert_to_hex(unsigned long int decimal_number, int lowercase)
 {
     int i;
     int remainder;
     char *hexa_num;
-    int char_count;
 
-    i = 0;
-    char_count = 0;
     hexa_num = (char *)malloc((hex_length(decimal_number) + 1) * sizeof(char));
+    i = 0;
     if (decimal_number == 0)
         hexa_num[i++] = '0';
-    else // handles positive decimal numbers
+    while (decimal_number != 0)
     {
-        // while (decimal_number != 0)
-        // {
-        //     remainder = decimal_number % 16;
-        //     if (remainder < 10)
-        //         hexa_num[i++] = remainder + '0'; // Convert to ASCII character
-        //     else
-        //         hexa_num[i++] = remainder + (lowercase ? 'a' : 'A') - 10;
-        //     decimal_number = decimal_number / 16;
-        // }
-        while (decimal_number != 0)
+        remainder = decimal_number % 16;
+        if (remainder < 10)
+            hexa_num[i++] = remainder + '0'; // Convert to ASCII character
+        else
         {
-            remainder = decimal_number % 16;
-            hexa_num[i++] = (remainder < 10) ? remainder + '0' : remainder + (lowercase ? 'a' : 'A') - 10;
-            decimal_number = decimal_number / 16;
+            if (lowercase)
+                hexa_num[i++] = remainder + 'a' - 10;
+            else
+                hexa_num[i++] = remainder + 'A' - 10;
         }
+        decimal_number = decimal_number / 16;
     }
-    while (--i >= 0) // Print the hex number in reverse order
+    return (hexa_num);
+}
+
+int ft_hex(unsigned long int decimal_number, int lowercase)
+{
+    char *hexa_num = convert_to_hex(decimal_number, lowercase);
+    int char_count = 0;
+    int i = ft_strlen(hexa_num) - 1;
+    while (i >= 0)
     {
         ft_putchar(hexa_num[i]);
+        i--;
         char_count++;
     }
     free(hexa_num);
